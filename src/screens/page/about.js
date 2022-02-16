@@ -5,7 +5,7 @@ function About() {
     <div id="about" className="main-about">
       <div className="main-about-container">
         <div className="main-about-container-content">
-          <h4>OUR TEAM</h4>
+          <h4>OUR ABH</h4>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
             recusandae ducimus amet facilis accusamus quis asperiores illo
