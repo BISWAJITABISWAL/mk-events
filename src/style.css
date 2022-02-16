@@ -321,10 +321,19 @@ body .bg-bubble.bg-yellow {
   text-align: center;
 }
 .main-about-grid {
+<<<<<<< Updated upstream
   display: flex;
   gap: 1rem;
   align-items: center;
   justify-content: space-between;
+=======
+    display: flex;
+    gap:1rem;
+    align-items: center;
+    /* justify-content: space-between; */
+    /* padding: 0 32px; */
+
+>>>>>>> Stashed changes
 }
 
 .main-about-grid .about {

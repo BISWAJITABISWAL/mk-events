@@ -31,18 +31,20 @@ function About() {
         </div>
 
         <div className="main-about-grid">
-          <div className="about">
-            <img src="./images/team5.png" alt="" />
-          </div>
-          <div className="about">
-            <img src="./images/team5.png" alt="" />
-          </div>
-          <div className="about">
-            <img src="./images/team5.png" alt="" />
-          </div>
-          <div className="about">
-            <img src="./images/team.png" alt="" />
-          </div>
+
+            <div className="about">
+                <img src="./images/team5.png" alt=""/>
+            </div>
+            <div className="about">
+                <img src="./images/team5.png" alt=""/>
+            </div>
+            <div className="about">
+                <img src="./images/team.png" alt=""/>
+            </div>
+            <div className="about">
+                <img src="./images/team.png" alt=""/>
+            </div>
+
         </div>
       </div>
     </div>
