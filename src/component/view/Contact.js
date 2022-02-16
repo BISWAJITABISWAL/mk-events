@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import sendSMSTwilio from "../../services/sms.service";
 import Button from "./Button";
 import CustomInput from "./input";
 
@@ -10,29 +11,22 @@ function Contact() {
   const [errorMessage, setErrorMessage] = useState("");
 
   const validateEmail = (value) => {
-  
     const re =
       /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
     let regex = new RegExp(re);
     if (value.match(regex)) {
-      
-     
       return true;
     } else {
-     
       return false;
     }
   };
 
   const validatePhone = (value) => {
-    
     const re = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
     let regex = new RegExp(re);
     if (value.match(regex)) {
-     
       return true;
     } else {
-      
       return false;
     }
   };
@@ -41,27 +35,29 @@ function Contact() {
 
     const emailValid = validateEmail(email);
     const phoneValid = validatePhone(phone);
-    console.log(name , email , phone , message , phoneValid , emailValid);
-    if(!name || !email || !phone || !message) {
-        console.log("All Feilds are required.");
-        setErrorMessage("All Feilds are required");
 
+    if (!name || !email || !phone || !message) {
+      console.log("All Feilds are required.");
+      setErrorMessage("All Feilds are required");
     } else if (!emailValid) {
-        setErrorMessage("Email is not valid");
-      
-    } else if(!phoneValid) {
-        setErrorMessage("Phone is not valid");
+      setErrorMessage("Email is not valid");
+    } else if (!phoneValid) {
+      setErrorMessage("Phone is not valid");
+    } else {
+      const data = {
+        phone,
+        message,
+        email,
+        name,
+      };
 
-    } 
-    else {
-        const data = {
-            name,
-            email,
-            phone,
-            message
-        };
-
-        console.log(data);
+      sendSMSTwilio(data)
+        .then((resp) => {
+          console.log(resp);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
   };
   return (
@@ -75,7 +71,7 @@ function Contact() {
             <img src="./images/image2.png" alt="" />
           </div>
           <div class="form">
-           <p style={{color:"red"}}>{errorMessage ? errorMessage : ''}</p>  
+            <p style={{ color: "red" }}>{errorMessage ? errorMessage : ""}</p>
             <div class="form-group">
               <CustomInput
                 type={"text"}

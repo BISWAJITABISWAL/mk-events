@@ -1,12 +1,16 @@
-import React from 'react';
+import React from "react";
 
 function Footer() {
-  return ( 
-  <footer class="footer">
-  <img src="./images/logo.png" alt=""/>
-  <p>Design & Developed By </p>
+  return (
+    <footer class="footer">
+      <img src="./images/logo2.png" alt="" />
 
-</footer>);
+      <p>
+        Design & Developed By{" "}
+        <a href="https://github.com/BISWAJITABISWAL"> Biswajita Biswal</a>
+      </p>
+    </footer>
+  );
 }
 
 export default Footer;
