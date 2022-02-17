@@ -5,46 +5,88 @@ function About() {
     <div id="about" className="main-about">
       <div className="main-about-container">
         <div className="main-about-container-content">
-          <h4>OUR ABH</h4>
+          <h4 className="font-bold text-xl mb-4">
+            Our Valuable{" "}
+            <span
+              className="font-bold text-primary border-primary"
+              style={{ borderBottom: "5px solid" }}
+            >
+              {" "}
+              Team{" "}
+            </span>
+          </h4>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-            recusandae ducimus amet facilis accusamus quis asperiores illo
-            laudantium rem, corporis quam aspernatur fuga enim, dolores at,
-            consectetur odit laboriosam! Ipsum ipsa rerum.
+            We at Mahakali events plan for Wedding Functions to Birthday Parties
+            or Corporate Events to Musical Functions, We offer full range of
+            Event Management Services that scale to your needs & budget.
           </p>
         </div>
 
         <div className="owner">
-          <img src="./images/team4.png" alt="" />
+          <div className="owner-image">
+            <div className="owner-image-bracket"></div>
+            <img src="./images/team4.png" alt="" />
+            <div className="owner-image-shadow"></div>
+          </div>
           <div className="owner-detail">
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil
-              mollitia pariatur magnam sunt, porro consectetur itaque. Ipsum,
-              alias. Eligendi hic, pariatur, nulla ullam minus natus placeat
-              quam unde et voluptate excepturi! Nihil tempora obcaecati debitis?
-              Sequi maxime fuga, alias vitae numquam ipsum! Enim distinctio
-              nesciunt ab non nemo velit molestiae.
+            <h4
+              style={{ margin: "0" }}
+              className="mb-4 font-bold text-primary text-xl"
+            >
+              Welcome,{" "}
+            </h4>
+            <p className="mb-4">
+              With Mahakali Events DECORATIONS we get those divine vibes around
+              the atmosphere. We help our clients choose from our wide range of
+              Mahakali Events Setup Designs within their budget. The Mahakali
+              Events Decorations at Home in Rajasthan have crazy fan following
+              where most of the Rajasthankars follow the trend. Mahakali Events
+              DECORATONS SETUP will include the Mahakali Events DECORATIONS
+              BACKDROP, Mahakali Events SEATING TABLE for BRIDE/GROOM, Mahakali
+              Events TAG and WELCOME Board.
             </p>
 
-            <h6>By: Owner name</h6>
+            <h6>By: Pooja Kshyap</h6>
           </div>
         </div>
 
         <div className="main-about-grid">
-
-            <div className="about">
-                <img src="./images/team5.png" alt=""/>
+          <div className="about">
+            <img src="./images/team5.png" alt="" />
+            <div className="content">
+              <div className="data">
+                <h6>Abhishek Dana</h6>
+                <p>Manager</p>
+              </div>
             </div>
-            <div className="about">
-                <img src="./images/team5.png" alt=""/>
+          </div>
+          <div className="about">
+            <img src="./images/team5.png" alt="" />
+            <div className="content">
+              <div className="data">
+                <h6>Abhishek Dana</h6>
+                <p>Manager</p>
+              </div>
             </div>
-            <div className="about">
-                <img src="./images/team.png" alt=""/>
+          </div>
+          <div className="about">
+            <img src="./images/team.png" alt="" />
+            <div className="content">
+              <div className="data">
+                <h6>Abhishek Dana</h6>
+                <p>Manager</p>
+              </div>
             </div>
-            <div className="about">
-                <img src="./images/team.png" alt=""/>
+          </div>
+          <div className="about">
+            <img src="./images/team.png" alt="" />
+            <div className="content">
+              <div className="data">
+                <h6>Abhishek Dana</h6>
+                <p>Manager</p>
+              </div>
             </div>
-
+          </div>
         </div>
       </div>
     </div>
