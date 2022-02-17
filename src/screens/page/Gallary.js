@@ -79,7 +79,7 @@ function Gallary() {
                   return (
                     <>
                       <div
-                        key={item.id}
+                        key={index}
                         onClick={() => showImageModal(item)}
                         class="items"
                       >

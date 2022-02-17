@@ -90,14 +90,14 @@ function Carousel() {
               <div className="carousel_slide">
                 <img
                   className="carousel_image"
-                  src={"./images/slider2.png"}
+                  src={"./images/slider2.jpg"}
                   alt=""
                 />
               </div>
               <div className="carousel_slide">
                 <img
                   className="carousel_image"
-                  src={"./images/slider3.png"}
+                  src={"./images/slider3.jpg"}
                   alt=""
                 />
               </div>

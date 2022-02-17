@@ -72,7 +72,7 @@ function Contact() {
             </div>
             <div class="contact-card ">
               <div class="images">
-                <img src="./images/image2.png" alt="" />
+                <img src="./images/image2.jpg" alt="" />
               </div>
               <div class="form">
                 <div

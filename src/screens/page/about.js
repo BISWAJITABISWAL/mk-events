@@ -25,7 +25,7 @@ function About() {
         <div className="owner">
           <div className="owner-image">
             <div className="owner-image-bracket"></div>
-            <img src="./images/team4.png" alt="" />
+            <img src="./images/team4.jpg" alt="" />
             <div className="owner-image-shadow"></div>
           </div>
           <div className="owner-detail">
@@ -52,7 +52,7 @@ function About() {
 
         <div className="main-about-grid">
           <div className="about">
-            <img src="./images/team5.png" alt="" />
+            <img src="./images/team5.jpg" alt="" />
             <div className="content">
               <div className="data">
                 <h6>Abhishek Dana</h6>
@@ -61,7 +61,7 @@ function About() {
             </div>
           </div>
           <div className="about">
-            <img src="./images/team5.png" alt="" />
+            <img src="./images/team5.jpg" alt="" />
             <div className="content">
               <div className="data">
                 <h6>Abhishek Dana</h6>
@@ -70,7 +70,7 @@ function About() {
             </div>
           </div>
           <div className="about">
-            <img src="./images/team.png" alt="" />
+            <img src="./images/team.jpg" alt="" />
             <div className="content">
               <div className="data">
                 <h6>Abhishek Dana</h6>
@@ -79,7 +79,7 @@ function About() {
             </div>
           </div>
           <div className="about">
-            <img src="./images/team.png" alt="" />
+            <img src="./images/team.jpg" alt="" />
             <div className="content">
               <div className="data">
                 <h6>Abhishek Dana</h6>
