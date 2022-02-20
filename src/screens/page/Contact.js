@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "../../component/view/Button";
 import CustomInput from "../../component/view/input";
+import { sendSMSTwilio } from "../../services/sms.service";
 import { saveUserDetails } from "../../services/user.service";
 
 function Contact() {
@@ -61,18 +62,13 @@ function Contact() {
         email,
         name,
       };
-      fetch("https://mk-events.in/api/messages", {
-        method: "POST",
 
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-        },
-        body: JSON.stringify(data),
-      })
+      sendSMSTwilio(data)
         .then((res) => res.json())
         .then((resp) => {
-          if (resp.success) {
+          setLoader(false);
+
+          if (resp.status === "accepted") {
             setLoader(false);
             setSuccessMessage(
               "Your response have been successfully recorded. Our team will get back to you shortly."
@@ -92,11 +88,77 @@ function Contact() {
           } else {
             setLoader(false);
             setErrorMessage(
-              "Error while making you request. We aplogize from the error occured."
+              "Error while making you request. We aplogize for the error occured."
             );
-            console.log("Message Error");
+
+            setTimeout(() => {
+              setSuccessMessage("");
+
+              Array.from(document.getElementsByTagName("input")).forEach(
+                (item) => (item.value = "")
+              );
+
+              Array.from(document.getElementsByTagName("textarea")).forEach(
+                (item) => (item.value = "")
+              );
+            }, 3500);
           }
+        })
+        .catch((err) => {
+          setLoader(false);
+          setLoader(false);
+          setErrorMessage(
+            "Error while making you request. We aplogize for the error occured."
+          );
+
+          setTimeout(() => {
+            setSuccessMessage("");
+
+            Array.from(document.getElementsByTagName("input")).forEach(
+              (item) => (item.value = "")
+            );
+
+            Array.from(document.getElementsByTagName("textarea")).forEach(
+              (item) => (item.value = "")
+            );
+          }, 3500);
         });
+      // fetch("api/messages", {
+      //   method: "POST",
+
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //     "Access-Control-Allow-Origin": "*",
+      //   },
+      //   body: JSON.stringify(data),
+      // })
+      //   .then((res) => res.json())
+      //   .then((resp) => {
+      //     if (resp.success) {
+      //       setLoader(false);
+      //       setSuccessMessage(
+      //         "Your response have been successfully recorded. Our team will get back to you shortly."
+      //       );
+
+      //       setTimeout(() => {
+      //         setSuccessMessage("");
+
+      //         Array.from(document.getElementsByTagName("input")).forEach(
+      //           (item) => (item.value = "")
+      //         );
+
+      //         Array.from(document.getElementsByTagName("textarea")).forEach(
+      //           (item) => (item.value = "")
+      //         );
+      //       }, 3500);
+      //     } else {
+      //       setLoader(false);
+      //       setErrorMessage(
+      //         "Error while making you request. We aplogize from the error occured."
+      //       );
+      //       console.log("Message Error");
+      //     }
+      //   });
     }
   };
   return (
