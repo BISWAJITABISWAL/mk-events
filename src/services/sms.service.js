@@ -9,7 +9,7 @@ export const sendSMSTwilio = (message) => {
     "Basic " + new Buffer(accountSid + ":" + authToken).toString("base64");
 
   const details = {
-    To: message.to,
+    To: "+917304541557",
     From: process.env.REACT_APP_TWILIO_PHONE_NUMBER,
     MessagingServiceSid: "MG4eca9db05dc6468de9f6d72a67e20fb4",
     Body: message.message,
