@@ -1,41 +1,33 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const pino = require("express-pino-logger")();
+import path from "path";
+import fs from "fs";
 
-const cors = require("cors");
-const client = require("twilio")(
-  process.env.TWILIO_ACCOUNT_SID,
-  process.env.TWILIO_AUTH_TOKEN
-);
+import React from "react";
+import ReactDOMServer from "react-dom/server";
+import express from "express";
 
+import App from "../src/App";
+
+const PORT = process.env.PORT || 3006;
 const app = express();
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(pino);
-app.use(
-  cors({
-    origin: "*",
-  })
-);
 
-app.post("/api/messages", (req, res) => {
-  console.log(req.body);
-  res.header("Content-Type", "application/json");
-  client.messages
-    .create({
-      from: process.env.REACT_APP_TWILIO_PHONE_NUMBER,
-      to: "+917304541557",
-      body: req.body.message,
-    })
-    .then(() => {
-      res.send(JSON.stringify({ success: true }));
-    })
-    .catch((err) => {
-      console.log(err);
-      res.send(JSON.stringify({ success: false }));
-    });
+app.get("/", (req, res) => {
+  const app = ReactDOMServer.renderToString(<App />);
+  const indexFile = path.resolve("./build/index.html");
+
+  fs.readFile(indexFile, "utf8", (err, data) => {
+    if (err) {
+      console.error("Something went wrong:", err);
+      return res.status(500).send("Oops, better luck next time!");
+    }
+
+    return res.send(
+      data.replace('<div id="root"></div>', `<div id="root">${app}</div>`)
+    );
+  });
 });
 
-app.listen(3001, () =>
-  console.log("Express server is running on localhost:3001")
-);
+app.use(express.static("./build"));
+
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
+});
