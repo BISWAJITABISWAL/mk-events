@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import sendSMSTwilio from "../../services/sms.service";
+import { saveUser } from "../../services/user.service";
 import Button from "./Button";
 import CustomInput from "./input";
 
@@ -54,6 +55,9 @@ function Contact() {
       sendSMSTwilio(data)
         .then((resp) => {
           console.log(resp);
+          saveUser(data).then((resp) => {
+            console.log(resp);
+          });
         })
         .catch((err) => {
           console.log(err);
@@ -65,10 +69,16 @@ function Contact() {
       <div class="main-contact-container">
         <div class="main-contact-container-content">
           <h4>Contact US</h4>
+          <br />
         </div>
         <div class="contact-card">
-          <div class="images">
-            <img src="./images/image2.png" alt="" />
+          <div class="images relative">
+            <div className="contact-overlay">
+              <p>
+                We are always ready to help you for your dream event come true.
+              </p>
+            </div>
+            <img src="./images/team1.webp" alt="" />
           </div>
           <div class="form">
             <p style={{ color: "red" }}>{errorMessage ? errorMessage : ""}</p>

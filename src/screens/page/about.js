@@ -15,7 +15,7 @@ function About() {
         </div>
 
         <div className="owner">
-          <img src="./images/team4.png" alt="" />
+          <img src="./images/team4.webp" alt="" />
           <div className="owner-detail">
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil
@@ -31,20 +31,18 @@ function About() {
         </div>
 
         <div className="main-about-grid">
-
-            <div className="about">
-                <img src="./images/team5.png" alt=""/>
-            </div>
-            <div className="about">
-                <img src="./images/team5.png" alt=""/>
-            </div>
-            <div className="about">
-                <img src="./images/team.png" alt=""/>
-            </div>
-            <div className="about">
-                <img src="./images/team.png" alt=""/>
-            </div>
-
+          <div className="about">
+            <img src="./images/team5.webp" alt="" />
+          </div>
+          <div className="about">
+            <img src="./images/team5.webp" alt="" />
+          </div>
+          <div className="about">
+            <img src="./images/team.webp" alt="" />
+          </div>
+          <div className="about">
+            <img src="./images/team.webp" alt="" />
+          </div>
         </div>
       </div>
     </div>

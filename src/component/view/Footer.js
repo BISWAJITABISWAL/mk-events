@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
   return (
     <footer class="footer">
-      <img src="./images/logo2.png" alt="" />
+      <img src="./images/logo2.webp" alt="" />
 
       <p>
         Design & Developed By{" "}

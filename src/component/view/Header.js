@@ -39,7 +39,7 @@ function Header() {
   return (
     <header>
       <div className="logo">
-        <img src="./images/logo2.png" alt="" />
+        <img src="./images/logo2.webp" alt="" />
       </div>
       <div onClick={() => openSideMenu()} className="menu-button">
         <div className=""></div>
