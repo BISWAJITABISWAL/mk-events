@@ -70,6 +70,7 @@ function Contact() {
 
           if (resp.status === "accepted") {
             setLoader(false);
+
             setSuccessMessage(
               "Your response have been successfully recorded. Our team will get back to you shortly."
             );
@@ -77,13 +78,10 @@ function Contact() {
             setTimeout(() => {
               setSuccessMessage("");
 
-              Array.from(document.getElementsByTagName("input")).forEach(
-                (item) => (item.value = "")
-              );
-
-              Array.from(document.getElementsByTagName("textarea")).forEach(
-                (item) => (item.value = "")
-              );
+              setName("");
+              setEmail("");
+              setPhone("");
+              setMessage("");
             }, 3500);
           } else {
             setLoader(false);
@@ -93,14 +91,10 @@ function Contact() {
 
             setTimeout(() => {
               setSuccessMessage("");
-
-              Array.from(document.getElementsByTagName("input")).forEach(
-                (item) => (item.value = "")
-              );
-
-              Array.from(document.getElementsByTagName("textarea")).forEach(
-                (item) => (item.value = "")
-              );
+              setName("");
+              setEmail("");
+              setPhone("");
+              setMessage("");
             }, 3500);
           }
         })

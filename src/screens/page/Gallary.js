@@ -7,6 +7,8 @@ function Gallary() {
   const [count, setCount] = useState(10);
 
   const [loading, setLoading] = useState(false);
+  const [imageLoading, setImageLoading] = useState(false);
+
   useEffect(() => {
     setLoading(true);
     const fetchData = async () => {
@@ -19,7 +21,7 @@ function Gallary() {
     fetchData();
   }, []);
   function showImageModal(item) {
-    setLoading(true);
+    setImageLoading(true);
     if (item.filetype.includes("image")) {
       let imageModal = document.getElementById("imageModal");
       let imageElement = document.createElement("img");
@@ -29,7 +31,7 @@ function Gallary() {
       imageElement.style.objectFit = "cover";
       imageModal.children[0].appendChild(imageElement);
       imageModal.classList.toggle("show-modal");
-      setLoading(false);
+      setImageLoading(false);
     } else {
       let imageModal = document.getElementById("imageModal");
       let videoElement = document.createElement("video");
@@ -40,7 +42,7 @@ function Gallary() {
       videoElement.controls = true;
       imageModal.children[0].appendChild(videoElement);
       imageModal.classList.toggle("show-modal");
-      setLoading(false);
+      setImageLoading(false);
     }
   }
 
@@ -188,7 +190,8 @@ function Gallary() {
           <span onClick={() => dismissImageModal()} class="modal-close-button">
             &times;
           </span>
-          {loading ? (
+          <br />
+          {imageLoading ? (
             <svg
               id="imageLoader"
               xmlns="http://www.w3.org/2000/svg"

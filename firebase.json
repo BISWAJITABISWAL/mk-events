@@ -1,7 +1,7 @@
 {
   "hosting": {
     "site": "mk-events",
-    "public": "server-build",
+    "public": "build",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
   }
 }

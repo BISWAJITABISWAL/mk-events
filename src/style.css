@@ -69,7 +69,7 @@ body .bg-bubble {
   height: 400px;
   filter: blur(100px);
   border-radius: 500px;
-  z-index: -1;
+  z-index: -1 !important;
 }
 
 button {
@@ -678,7 +678,7 @@ textarea {
 .form-group input::placeholder,
 textarea::placeholder {
   color: #b7b7b7;
-  text-transform: capitalize;
+
   font-size: 14px;
 }
 

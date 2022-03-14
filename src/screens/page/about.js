@@ -23,7 +23,11 @@ function About() {
         </div>
 
         <div className="owner">
-          <img src="./images/team4.webp" alt="" />
+          <div className="owner-image">
+            <div className="owner-image-bracket"></div>
+            <img src="./images/team4.webp" alt="" />
+            <div className="owner-image-shadow"></div>
+          </div>
           <div className="owner-detail">
             <h4
               style={{ margin: "0" }}
@@ -49,15 +53,39 @@ function About() {
         <div className="main-about-grid">
           <div className="about">
             <img src="./images/team5.webp" alt="" />
+            <div className="content">
+              <div className="data">
+                <h6>Abhishek Dana</h6>
+                <p>Manager</p>
+              </div>
+            </div>
           </div>
           <div className="about">
             <img src="./images/team5.webp" alt="" />
+            <div className="content">
+              <div className="data">
+                <h6>Abhishek Dana</h6>
+                <p>Manager</p>
+              </div>
+            </div>
           </div>
           <div className="about">
             <img src="./images/team.webp" alt="" />
+            <div className="content">
+              <div className="data">
+                <h6>Abhishek Dana</h6>
+                <p>Manager</p>
+              </div>
+            </div>
           </div>
           <div className="about">
             <img src="./images/team.webp" alt="" />
+            <div className="content">
+              <div className="data">
+                <h6>Abhishek Dana</h6>
+                <p>Manager</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
