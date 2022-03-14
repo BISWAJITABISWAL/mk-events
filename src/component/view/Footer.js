@@ -7,7 +7,10 @@ function Footer() {
 
       <p>
         Design & Developed By{" "}
-        <a href="https://github.com/BISWAJITABISWAL"> Biswajita Biswal</a>
+        <a className="text-primary" href="https://github.com/BISWAJITABISWAL">
+          {" "}
+          Biswajita Biswal
+        </a>
       </p>
     </footer>
   );

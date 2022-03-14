@@ -183,7 +183,6 @@ function Gallary() {
           )}
         </div>
       </div>
-
       <div id="imageModal" class="modal">
         <div class="modal-content">
           <span onClick={() => dismissImageModal()} class="modal-close-button">

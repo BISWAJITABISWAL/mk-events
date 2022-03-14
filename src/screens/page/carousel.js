@@ -14,7 +14,7 @@ function Carousel() {
         }
       });
 
-      if (activeIndex != 0) {
+      if (activeIndex !== 0) {
         Array.from(carouselItems).forEach((el, index) => {
           if (el.classList.contains("active")) {
             activeIndex = index;
