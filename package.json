@@ -21,8 +21,8 @@
   },
   "scripts": {
     "start": "node build/bundle.js",
-    "build": "webpack --config webpack.client.js & webpack --config webpack.server.js",
-    "build:start": "webpack --config webpack.client.js && webpack --config webpack.server.js && node build/bundle.js"
+    "build": "webpack --config webpack.server.js & webpack --config webpack.server.js",
+    "build:start": "webpack --config webpack.server.js && webpack --config webpack.server.js && node build/bundle.js"
   },
   "eslintConfig": {
     "extends": [
