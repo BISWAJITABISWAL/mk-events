@@ -51,7 +51,7 @@ function Carousel() {
         }
       });
 
-      if (activeIndex != carouselItems.length - 1) {
+      if (activeIndex !== carouselItems.length - 1) {
         Array.from(carouselItems).forEach((el, index) => {
           if (el.classList.contains("active")) {
             activeIndex = index;
@@ -81,21 +81,21 @@ function Carousel() {
             <img
               className="carousel_image"
               src={"./images/slider1.webp"}
-              alt=""
+              alt="slider"
             />
           </div>
           <div className="carousel_slide">
             <img
               className="carousel_image"
               src={"./images/slider2.webp"}
-              alt=""
+              alt="slider"
             />
           </div>
           <div className="carousel_slide">
             <img
               className="carousel_image"
               src={"./images/slider3.webp"}
-              alt=""
+              alt="slider"
             />
           </div>
         </div>

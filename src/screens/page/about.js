@@ -5,7 +5,7 @@ function About() {
     <div id="about" className="main-about">
       <div className="main-about-container">
         <div className="main-about-container-content">
-          <h4 className="font-bold text-xl mb-4">
+          <h1 className="font-bold text-xl mb-4">
             Our Valuable{" "}
             <span
               className="font-bold text-primary border-primary"
@@ -14,7 +14,7 @@ function About() {
               {" "}
               Team{" "}
             </span>
-          </h4>
+          </h1>
           <p>
             We at Mahakali events plan for Wedding Functions to Birthday Parties
             or Corporate Events to Musical Functions, We offer full range of
@@ -25,7 +25,7 @@ function About() {
         <div className="owner">
           <div className="owner-image">
             <div className="owner-image-bracket"></div>
-            <img src="./images/team4.webp" alt="" />
+            <img src="./images/team4.webp" alt="team" />
             <div className="owner-image-shadow"></div>
           </div>
           <div className="owner-detail">
@@ -52,7 +52,7 @@ function About() {
 
         <div className="main-about-grid">
           <div className="about">
-            <img src="./images/team5.webp" alt="" />
+            <img src="./images/team5.webp" alt="team" />
             <div className="content">
               <div className="data">
                 <h6>Abhishek Dana</h6>
@@ -61,7 +61,7 @@ function About() {
             </div>
           </div>
           <div className="about">
-            <img src="./images/team5.webp" alt="" />
+            <img src="./images/team5.webp" alt="team" />
             <div className="content">
               <div className="data">
                 <h6>Abhishek Dana</h6>
@@ -70,7 +70,7 @@ function About() {
             </div>
           </div>
           <div className="about">
-            <img src="./images/team.webp" alt="" />
+            <img src="./images/team.webp" alt="team" />
             <div className="content">
               <div className="data">
                 <h6>Abhishek Dana</h6>
@@ -79,7 +79,7 @@ function About() {
             </div>
           </div>
           <div className="about">
-            <img src="./images/team.webp" alt="" />
+            <img src="./images/team.webp" alt="team" />
             <div className="content">
               <div className="data">
                 <h6>Abhishek Dana</h6>

@@ -39,7 +39,7 @@ function Header() {
   return (
     <header>
       <div className="logo">
-        <img src="./images/logo2.webp" alt="" />
+        <img src="./images/logo2.webp" alt="logo" />
       </div>
       <div onClick={() => openSideMenu()} className="menu-button">
         <div className=""></div>
@@ -49,65 +49,25 @@ function Header() {
       <ul id="headerItems" className="">
         {navItems.map((val) => (
           <li
+            key={val.id}
             onClick={() => setActiveId(val.id)}
             className={activeId === val.id ? "active" : ""}
           >
             <a href={"#" + val.id}>{val.name}</a>
           </li>
         ))}
-
-        {/* <li
-          className={
-            window.location.pathname.includes("#services") ? "active" : ""
-          }
-        >
-          <a href="#services">Services</a>
-        </li>
-        <li
-          className={
-            window.location.pathname.includes("#about") ? "active" : ""
-          }
-        >
-          <a href="#about">About</a>
-        </li>
-        <li
-          className={
-            window.location.pathname.includes("#gallery") ? "active" : ""
-          }
-        >
-          <a href="#gallery">Gallery</a>
-        </li>
-        <li
-          className={
-            window.location.pathname.includes("#contact") ? "active" : ""
-          }
-        >
-          <a href="#contact">Contact</a>
-        </li> */}
       </ul>
 
       <ul id="" className="phone-menu">
         {navItems.map((val) => (
           <li
+            key={val.id}
             onClick={() => changeHeaderNavActivePhone(val)}
             className={activeId === val.id ? "active" : ""}
           >
             <a href={"#" + val.id}>{val.name}</a>
           </li>
         ))}
-
-        {/* <li onClick={() => changeHeaderNavActivePhone(this)}>
-          <a href="#services">Services</a>
-        </li>
-        <li onClick={() => changeHeaderNavActivePhone(this)}>
-          <a href="#about">About</a>
-        </li>
-        <li onClick={() => changeHeaderNavActivePhone(this)}>
-          <a href="#gallery">Gallery</a>
-        </li>
-        <li onClick={() => changeHeaderNavActivePhone(this)}>
-          <a href="#contact">Contact</a>
-        </li> */}
       </ul>
     </header>
   );

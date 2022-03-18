@@ -6,10 +6,10 @@ function Services() {
       <div className="relative">
         <div className="bg-bubble bg-red"></div>
 
-        <div id="services" class="main-services">
-          <div class="main-services-container">
-            <div class="main-services-container-content">
-              <h4 className="font-bold text-xl mb-4">
+        <div id="services" className="main-services">
+          <div className="main-services-container">
+            <div className="main-services-container-content">
+              <h1 className="font-bold text-xl mb-4">
                 We Plan Special{" "}
                 <span
                   className="font-bold text-primary border-primary"
@@ -18,7 +18,7 @@ function Services() {
                   {" "}
                   Events{" "}
                 </span>
-              </h4>
+              </h1>
               <p>
                 Celebrate everyday. From start to finish, for all the reasons:
                 Birthday, Cocktail party, Engagement Party, Holi Festival, we
@@ -33,37 +33,37 @@ function Services() {
                 We can't wait to create the celebration of your dreams.
               </p>
             </div>
-            <div class="main-services-grid">
-              <div class="services">
-                <img src="./images/icon1.png" alt="" />
+            <div className="main-services-grid">
+              <div className="services">
+                <img src="./images/icon1.png" alt="service-icon" />
                 <p>Birthday Events</p>
               </div>
-              <div class="services">
-                <img src="./images/icon2 .png" alt="" />
+              <div className="services">
+                <img src="./images/icon2 .png" alt="service-icon" />
                 <p>Birthday Events</p>
               </div>
-              <div class="services">
-                <img src="./images/icon3 .png" alt="" />
+              <div className="services">
+                <img src="./images/icon3 .png" alt="service-icon" />
                 <p>Marriage Events</p>
               </div>
-              <div class="services">
-                <img src="./images/icon4.png" alt="" />
+              <div className="services">
+                <img src="./images/icon4.png" alt="service-icon" />
                 <p>Engagement Events</p>
               </div>
-              <div class="services">
-                <img src="./images/icon1.png" alt="" />
+              <div className="services">
+                <img src="./images/icon1.png" alt="service-icon" />
                 <p>Birthday Events</p>
               </div>
-              <div class="services">
-                <img src="./images/icon2 .png" alt="" />
+              <div className="services">
+                <img src="./images/icon2 .png" alt="service-icon" />
                 <p>Birthday Events</p>
               </div>
-              <div class="services">
-                <img src="./images/icon3 .png" alt="" />
+              <div className="services">
+                <img src="./images/icon3 .png" alt="service-icon" />
                 <p>Marriage Events</p>
               </div>
-              <div class="services">
-                <img src="./images/icon4.png" alt="" />
+              <div className="services">
+                <img src="./images/icon4.png" alt="service-icon" />
                 <p>Engagement Events</p>
               </div>
             </div>

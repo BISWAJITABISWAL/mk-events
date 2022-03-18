@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Button from "../../component/view/Button";
 import CustomInput from "../../component/view/input";
 import { sendSMSTwilio } from "../../services/sms.service";
-import { saveUserDetails } from "../../services/user.service";
 
 function Contact() {
   const [name, setName] = useState("");
@@ -160,16 +159,21 @@ function Contact() {
       <div className="relative">
         <div className="bg-bubble bg-blue"></div>
 
-        <div id="contact" class="main-contact">
-          <div class="main-contact-container">
-            <div class="main-contact-container-content">
-              <h4>Contact US</h4>
+        <div id="contact" className="main-contact">
+          <div className="main-contact-container">
+            <div className="main-contact-container-content">
+              <h1
+                className="font-bold text-xl "
+                style={{ marginBottom: "2rem" }}
+              >
+                Contact US
+              </h1>
             </div>
-            <div class="contact-card ">
-              <div class="images">
-                <img src="./images/image2.jpg" alt="" />
+            <div className="contact-card ">
+              <div className="images">
+                <img src="./images/image2.jpg" alt="contactImage" />
               </div>
-              <div class="form">
+              <div className="form">
                 <div
                   className="mb-4
                 "
@@ -196,7 +200,7 @@ function Contact() {
                   </h4>
                 </div>
 
-                <div class="form-group">
+                <div className="form-group">
                   <CustomInput
                     type={"text"}
                     value={name}
@@ -204,9 +208,9 @@ function Contact() {
                     placeholder={"Name"}
                     changeEvent={(e) => setName(e.target.value)}
                   ></CustomInput>
-                  {/* <input class="full-name" type="text" placeholder="Name" /> */}
+                  {/* <input className="full-name" type="text" placeholder="Name" /> */}
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                   <CustomInput
                     type={"text"}
                     value={email}
@@ -215,9 +219,9 @@ function Contact() {
                     changeEvent={(e) => setEmail(e.target.value)}
                   ></CustomInput>
 
-                  {/* <input class="email" type="text" placeholder="Email" /> */}
+                  {/* <input className="email" type="text" placeholder="Email" /> */}
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                   <CustomInput
                     type={"text"}
                     value={phone}
@@ -226,9 +230,9 @@ function Contact() {
                     changeEvent={(e) => setPhone(e.target.value)}
                   ></CustomInput>
 
-                  {/* <input class="Contact no" type="text" placeholder="Contact no" /> */}
+                  {/* <input className="Contact no" type="text" placeholder="Contact no" /> */}
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                   <textarea
                     className="full-name"
                     name="messages"
@@ -253,7 +257,7 @@ function Contact() {
 
                 {loader ? (
                   <Button
-                    text={<img src={"images/loader.gif"} />}
+                    text={<img src={"images/loader.gif"} alt="loader" />}
                     className={"contact-button"}
                   ></Button>
                 ) : (

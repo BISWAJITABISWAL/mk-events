@@ -587,6 +587,9 @@ p {
   cursor: pointer;
   border-radius: 0.25rem;
   background-color: lightgray;
+  padding: 1rem;
+  color: white;
+  margin-bottom: 1rem;
 }
 .close-button:hover {
   background-color: darkgray;
@@ -771,20 +774,40 @@ button:hover {
   }
 }
 .phone-menu {
-  display: flex;
   flex-direction: column;
   background-color: #f9f9f9;
   position: absolute;
   left: 0;
   right: 0;
-  width: 80%;
-  top: 90px;
+
   padding: 16px;
   margin: 0 auto;
   border-radius: 5px;
   visibility: hidden !important;
+  position: fixed;
+  height: 100%;
+  width: auto !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 16px;
 }
 
+.phone-menu .header {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.phone-menu .header button {
+  padding: 8px 20px;
+  font-size: 24px;
+  border: none;
+  color: white;
+  border-radius: 100px;
+  background-color: rgba(237, 165, 57, 0.69);
+}
 .phone-menu.show {
   visibility: visible !important;
 }
@@ -801,6 +824,27 @@ button:hover {
 
   .main-services-grid .services {
     width: 100%;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer img {
+    width: 75% !important;
+  }
+
+  .modal-content {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    transform: translate(0, 0);
+    width: auto;
+    left: 0;
+    right: 0;
+    border-radius: 0;
   }
 }
 .footer p {
