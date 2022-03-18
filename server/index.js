@@ -1,33 +1,26 @@
 import path from "path";
-import fs from "fs";
-
+import Express from "express";
 import React from "react";
-import ReactDOMServer from "react-dom/server";
-import express from "express";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import counterApp from "./reducers";
+import App from "./containers/App";
 
-import App from "../src/App";
+const app = Express();
+const port = 3000;
 
-const PORT = process.env.PORT || 3006;
-const app = express();
+//Serve static files
+app.use("/static", Express.static("static"));
 
-app.get("/", (req, res) => {
-  const app = ReactDOMServer.renderToString(<App />);
-  const indexFile = path.resolve("./build/index.html");
+// This is fired every time the server side receives a request
+app.use(handleRender);
 
-  fs.readFile(indexFile, "utf8", (err, data) => {
-    if (err) {
-      console.error("Something went wrong:", err);
-      return res.status(500).send("Oops, better luck next time!");
-    }
+// We are going to fill these out in the sections to follow
+function handleRender(req, res) {
+  /* ... */
+}
+function renderFullPage(html, preloadedState) {
+  /* ... */
+}
 
-    return res.send(
-      data.replace('<div id="root"></div>', `<div id="root">${app}</div>`)
-    );
-  });
-});
-
-app.use(express.static("./build"));
-
-app.listen(PORT, () => {
-  console.log(`Server is listening on port ${PORT}`);
-});
+app.listen(port);

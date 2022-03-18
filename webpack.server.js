@@ -1,15 +1,17 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const path = require("path");
-const nodeExternals = require("webpack-node-externals");
+const webpackNodeExternals = require("webpack-node-externals");
+const webpackBase = require("./webpack.base");
 
-module.exports = {
-  entry: "./server/index.js",
+const webpackMerge = require("webpack-merge");
+const config = {
+  entry: "./src/index.js",
   target: "node",
-  externals: [nodeExternals()],
+  externals: [webpackNodeExternals()],
   output: {
-    path: path.resolve("server-build"),
-    filename: "index.js",
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "build"),
   },
   plugins: [new MiniCssExtractPlugin()],
   module: {
@@ -34,3 +36,5 @@ module.exports = {
     ],
   },
 };
+
+module.exports = webpackMerge(config, webpackBase);
