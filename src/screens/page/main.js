@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React from "react";
 import Contact from "./Contact";
 import Footer from "../../component/view/Footer";
 import Header from "../../component/view/Header";
@@ -6,7 +6,6 @@ import About from "./about";
 import Carousel from "./carousel";
 import Gallary from "./Gallary";
 import Services from "./services";
-import { FullPage, Slide } from "react-full-page";
 
 function Main() {
   return (
@@ -24,8 +23,6 @@ function Main() {
       <Contact></Contact>
 
       <Footer />
-
-      <div className="d-none"></div>
     </div>
   );
 }

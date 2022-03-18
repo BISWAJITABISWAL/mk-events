@@ -9,6 +9,9 @@ function Gallary() {
   const [loading, setLoading] = useState(false);
   const [imageLoading, setImageLoading] = useState(false);
 
+  const [imageUrl, setImageUrl] = useState("");
+  const [mediaType, setMediaType] = useState("");
+
   useEffect(() => {
     setLoading(true);
     const fetchData = async () => {
@@ -19,29 +22,33 @@ function Gallary() {
     };
 
     fetchData();
-  }, []);
+  }, [count]);
   function showImageModal(item) {
     setImageLoading(true);
+    let imageModal = document.getElementById("imageModal");
+
+    imageModal.classList.toggle("show-modal");
     if (item.filetype.includes("image")) {
-      let imageModal = document.getElementById("imageModal");
-      let imageElement = document.createElement("img");
-      imageElement.src = item.media.url;
-      imageElement.style.height = "500px";
-      imageElement.style.width = "100%";
-      imageElement.style.objectFit = "cover";
-      imageModal.children[0].appendChild(imageElement);
-      imageModal.classList.toggle("show-modal");
+      // let imageElement = document.createElement("img");
+      // imageElement.src = item.media.url;
+      // imageElement.style.height = "500px";
+      // imageElement.style.width = "100%";
+      // imageElement.style.objectFit = "cover";
+      // imageModal.children[0].appendChild(imageElement);
+      setMediaType("IMAGE");
+      setImageUrl(item.media.url);
       setImageLoading(false);
     } else {
-      let imageModal = document.getElementById("imageModal");
-      let videoElement = document.createElement("video");
-      videoElement.src = item.media.url;
-      videoElement.style.height = "500px";
-      videoElement.style.width = "100%";
-      videoElement.style.objectFit = "cover";
-      videoElement.controls = true;
-      imageModal.children[0].appendChild(videoElement);
-      imageModal.classList.toggle("show-modal");
+      // let imageModal = document.getElementById("imageModal");
+      // let videoElement = document.createElement("video");
+      // videoElement.src = item.media.url;
+      // videoElement.style.height = "500px";
+      // videoElement.style.width = "100%";
+      // videoElement.style.objectFit = "cover";
+      // videoElement.controls = true;
+      // imageModal.children[0].appendChild(videoElement);
+      setMediaType("VIDEO");
+      setImageUrl(item.media.url);
       setImageLoading(false);
     }
   }
@@ -50,7 +57,6 @@ function Gallary() {
     let imageModal = document.getElementById("imageModal");
     if (imageModal != null) {
       imageModal.classList.toggle("show-modal");
-      imageModal.children[0].removeChild(imageModal.children[0].children[1]);
     }
   }
 
@@ -67,10 +73,10 @@ function Gallary() {
   }
   return (
     <>
-      <div id="gallery" class="main-Gallery">
-        <div class="main-Gallery-container">
-          <div class="main-Gallery-container-content">
-            <h4>Gallery</h4>
+      <div id="gallery" className="main-Gallery">
+        <div className="main-Gallery-container">
+          <div className="main-Gallery-container-content">
+            <h1 className="font-bold text-xl mb-4">Gallery</h1>
             <p>
               We at mahakali events (aka mk-events) are pleased to let everyone
               know that we have been in a event journey from last 10 year. Here
@@ -86,10 +92,10 @@ function Gallary() {
                   <div
                     key={index}
                     onClick={() => showImageModal(item)}
-                    class="items"
+                    className="items"
                   >
                     {item.filetype.includes("image") ? (
-                      <img src={item.media.url} alt="" />
+                      <img src={item.media.url} alt="gallery" />
                     ) : (
                       <video controls src={item.media.url} />
                     )}
@@ -118,7 +124,7 @@ function Gallary() {
                   r="0"
                   fill="none"
                   stroke="#e19d1f"
-                  stroke-width="2"
+                  strokeWidth="2"
                 >
                   <animate
                     attributeName="r"
@@ -147,7 +153,7 @@ function Gallary() {
                   r="0"
                   fill="none"
                   stroke="#f0cd43"
-                  stroke-width="2"
+                  strokeWidth="2"
                 >
                   <animate
                     attributeName="r"
@@ -185,11 +191,15 @@ function Gallary() {
           )}
         </div>
       </div>
-      <div id="imageModal" class="modal">
-        <div class="modal-content">
-          <span onClick={() => dismissImageModal()} class="modal-close-button">
+      <div id="imageModal" className="modal">
+        <div className="modal-content">
+          <span
+            onClick={() => dismissImageModal()}
+            className="modal-close-button"
+          >
             &times;
           </span>
+
           <br />
           {imageLoading ? (
             <svg
@@ -207,7 +217,7 @@ function Gallary() {
                 r="0"
                 fill="none"
                 stroke="#e19d1f"
-                stroke-width="2"
+                strokeWidth="2"
               >
                 <animate
                   attributeName="r"
@@ -236,7 +246,7 @@ function Gallary() {
                 r="0"
                 fill="none"
                 stroke="#f0cd43"
-                stroke-width="2"
+                strokeWidth="2"
               >
                 <animate
                   attributeName="r"
@@ -260,8 +270,18 @@ function Gallary() {
                 ></animate>
               </circle>
             </svg>
+          ) : mediaType == "IMAGE" ? (
+            <img
+              src={imageUrl}
+              style={{ height: "500px", width: "100%", objectFit: "cover" }}
+              alt="imageGallery"
+            />
           ) : (
-            ""
+            <video
+              src={imageUrl}
+              style={{ width: "100%", objectFit: "cover" }}
+              alt="imageGallery"
+            />
           )}
         </div>
       </div>
