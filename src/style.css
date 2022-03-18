@@ -712,8 +712,25 @@ button:hover {
   color: #bbbbbb;
 }
 
+.footer .copyright {
+  text-align: center;
+}
 .footer img {
   width: 160px;
+}
+
+.footer .social {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer .social svg {
+  height: 24px;
+  width: 24px;
+}
+.footer .social svg path {
+  fill: rgba(237, 165, 57, 0.69);
 }
 
 @media only screen and (max-width: 300px) {
