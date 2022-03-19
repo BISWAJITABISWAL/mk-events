@@ -12,7 +12,7 @@ const app = express();
 
 app.get("/", (req, res) => {
   const app = ReactDOMServer.renderToString(<App />);
-  const indexFile = path.resolve("./public/index.html");
+  const indexFile = path.resolve("./build/index.html");
 
   fs.readFile(indexFile, "utf8", (err, data) => {
     if (err) {

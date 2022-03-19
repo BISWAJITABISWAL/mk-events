@@ -25,12 +25,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev:build-server": "NODE_ENV=production webpack --config webpack.server.js --mode=production -w",
+    "dev:build-server": "NODE_ENV=development webpack --config webpack.server.js --mode=development -w",
     "dev:start": "nodemon ./server-build/index.js",
-    "dev": "npm-run-all --parallel build dev:*",
-    "server": "node-env-run server --exec nodemon | pino-colada",
-    "deploy": "npm run build && firebase deploy && git add . && git commit -m 'change' && git push",
-    "production": "webpack  --progress"
+    "start:heroku": "npm-run-all --parallel build dev:*",
+    "postinstall": "npm run build",
+    "deploy": "npm run build && firebase deploy && git add . && git commit -m 'change' && git push"
   },
   "eslintConfig": {
     "extends": [
