@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "babel-preset-es2015": "^6.24.1",
     "buffer": "^6.0.3",
     "cors": "^2.8.5",
     "firebase": "^9.6.6",
@@ -16,19 +17,15 @@
     "react-redux": "^7.2.6",
     "react-scripts": "5.0.0",
     "redux": "^4.1.2",
+    "regenerator-runtime": "^0.13.9",
     "web-vitals": "^2.1.4",
     "webpack-node-externals": "^3.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "dev:build-server": "NODE_ENV=production webpack --config webpack.server.js --mode=production -w",
-    "dev:start": "nodemon ./server-build/index.js",
-    "dev": "npm-run-all --parallel build dev:*",
-    "server": "node-env-run server --exec nodemon | pino-colada",
-    "deploy": "npm run build && firebase deploy && git add . && git commit -m 'change' && git push"
+    "start": "webpack && node server/index.js",
+    "dev": "npm-run-all --parallel watch:*",
+    "watch:webpack": "webpack -w",
+    "watch:server": "nodemon --ext js,jsx --ignore public/ server.js"
   },
   "eslintConfig": {
     "extends": [
