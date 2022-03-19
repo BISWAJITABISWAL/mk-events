@@ -57,6 +57,7 @@ function Gallary() {
     let imageModal = document.getElementById("imageModal");
     if (imageModal != null) {
       imageModal.classList.toggle("show-modal");
+      setImageUrl("");
     }
   }
 
