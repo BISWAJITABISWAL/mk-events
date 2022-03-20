@@ -21,15 +21,19 @@
     "webpack-node-externals": "^3.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "dev:build-server": "NODE_ENV=development webpack --config webpack.server.js --mode=development -w",
-    "dev:start": "nodemon ./server-build/index.js",
     "start:heroku": "node server/index.js",
-    "postinstall": "npm run build",
-    "deploy": "npm run build && firebase deploy && git add . && git commit -m 'change' && git push"
+    "postinstall": "npm run build:ssr",
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "lint": "ng lint --fix",
+    "build:client-and-server-bundles": "react-scripts build --prod && react-scripts build --prod --app 1 --output-hashing=false",
+    "build:prerender": "npm run build:client-and-server-bundles && npm run webpack:server && npm run generate:prerender",
+    "build:ssr": "npm run build:client-and-server-bundles && npm run webpack:server",
+    "generate:prerender": "cd dist && node prerender",
+    "webpack:server": "webpack --config webpack.server.js --progress --colors",
+    "serve:prerender": "cd build && http-server",
+    "serve:ssr": "node server/index.js"
   },
   "eslintConfig": {
     "extends": [
