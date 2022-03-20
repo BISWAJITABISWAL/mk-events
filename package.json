@@ -27,7 +27,7 @@
     "eject": "react-scripts eject",
     "dev:build-server": "NODE_ENV=development webpack --config webpack.server.js --mode=development -w",
     "dev:start": "nodemon ./server-build/index.js",
-    "start:heroku": "npm-run-all --parallel build dev:*",
+    "start:heroku": "node server/index.js",
     "postinstall": "npm run build",
     "deploy": "npm run build && firebase deploy && git add . && git commit -m 'change' && git push"
   },
