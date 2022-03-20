@@ -21,7 +21,7 @@
     "webpack-node-externals": "^3.0.0"
   },
   "scripts": {
-    "start:heroku": "node server/index.js",
+    "start:heroku": "node server-build/index.js",
     "postinstall": "npm run build:ssr",
     "ng": "ng",
     "start": "ng serve",
@@ -31,9 +31,9 @@
     "build:prerender": "npm run build:client-and-server-bundles && npm run webpack:server && npm run generate:prerender",
     "build:ssr": "npm run build:client-and-server-bundles && npm run webpack:server",
     "generate:prerender": "cd dist && node prerender",
-    "webpack:server": "webpack --config webpack.server.js --progress --colors",
+    "webpack:server": "webpack --config webpack.server.js --progress --mode production",
     "serve:prerender": "cd build && http-server",
-    "serve:ssr": "node server/index.js"
+    "serve:ssr": "node server-build/index.js"
   },
   "eslintConfig": {
     "extends": [
