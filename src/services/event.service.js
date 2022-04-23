@@ -1,4 +1,4 @@
-import { collection, getDocs, onSnapshot } from "firebase/firestore";
+import { collection, getDoc, getDocs, onSnapshot } from "firebase/firestore";
 import db from "../firebase";
 export const getAllMedia = async () => {
   const ref = collection(db, "Medias");
@@ -10,4 +10,11 @@ export const getAllMedia = async () => {
   //const data=await response.get();
 
   //return data.docs.map(item=>item.data())
+};
+
+export const getSliderImages = async () => {
+  const ref = collection(db, "Slider");
+  const mediaSnapshot = await getDocs(ref);
+  const mediaList = mediaSnapshot.docs.map((doc) => doc.data());
+  return mediaList;
 };

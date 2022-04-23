@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getSliderImages } from "../../services/event.service";
 
 function Carousel() {
+  const [slides, setSlides] = useState([]);
+  const [loading, setLoading] = useState(false);
   const prevSlide = () => {
     let carouselItems =
       document.getElementById("carousel_tarck") &&
@@ -73,31 +76,37 @@ function Carousel() {
       }
     }
   };
+
+  useEffect(() => {
+    setLoading(true);
+    const fetchData = async () => {
+      const data = await getSliderImages();
+      setSlides(data);
+
+      setLoading(false);
+    };
+
+    fetchData();
+  }, [slides]);
+
   return (
     <div id="home" className="carousel">
       <div className="carousel_track-container">
         <div id="carousel_tarck" className="carousel_tarck">
-          <div className="carousel_slide active">
-            <img
-              className="carousel_image"
-              src={"./images/slider1.webp"}
-              alt="slider"
-            />
-          </div>
-          <div className="carousel_slide">
-            <img
-              className="carousel_image"
-              src={"./images/slider2.webp"}
-              alt="slider"
-            />
-          </div>
-          <div className="carousel_slide">
-            <img
-              className="carousel_image"
-              src={"./images/slider3.webp"}
-              alt="slider"
-            />
-          </div>
+          {slides &&
+            slides.map((slide, index) => {
+              return (
+                <div
+                  className={"carousel_slide " + (index === 0 ? "active" : "")}
+                >
+                  <img
+                    className="carousel_image"
+                    src={slide.media.url}
+                    alt="slider"
+                  />
+                </div>
+              );
+            })}
         </div>
 
         <div className="crousel-buttons">
