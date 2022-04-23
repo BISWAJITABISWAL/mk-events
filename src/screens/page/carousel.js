@@ -26,7 +26,8 @@ function Carousel() {
           el.classList.remove("active");
         });
 
-        Array.from(carouselItems)[activeIndex - 1].class.add("active");
+        Array.from(carouselItems)[activeIndex - 1] &&
+          Array.from(carouselItems)[activeIndex - 1].classList.add("active");
       } else {
         Array.from(carouselItems).forEach((el, index) => {
           if (el.classList.contains("active")) {
