@@ -1,17 +1,17 @@
 import { Buffer } from "buffer";
 export const sendSMSTwilio = (message) => {
   const url =
-    "https://api.twilio.com/2010-04-01/Accounts/AC2453ad9c56e9c6608fcabf1b57a6591e/Messages.json";
+    "https://api.twilio.com/2010-04-01/Accounts/xxxxxxxxxxxxxxx/Messages.json";
 
-  const accountSid = "AC2453ad9c56e9c6608fcabf1b57a6591e";
-  const authToken = "46d2064342be6f6080e2ae6a1a21a279";
+  const accountSid = "xxxxxxxxxxxxx";
+  const authToken = "xxxxxxxxxxxxxxx";
   const auth =
     "Basic " + new Buffer(accountSid + ":" + authToken).toString("base64");
 
   const details = {
     To: "+917304541557",
     From: process.env.REACT_APP_TWILIO_PHONE_NUMBER,
-    MessagingServiceSid: "MG4eca9db05dc6468de9f6d72a67e20fb4",
+    MessagingServiceSid: "xxxxxxxxxxxxxxxxxxx",
     Body: message.message,
   };
 
